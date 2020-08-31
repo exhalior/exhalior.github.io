@@ -2,7 +2,7 @@
 permalink: /GamingWriteup.html
 ---
 
-![thumbnail](https://i.imgur.com/lZRim5g.jpg | 250x250)
+![thumbnail](https://i.imgur.com/lZRim5g.jpg = 250x250)
 
 ## Tryhackme Gaming Server Writeup.
 
