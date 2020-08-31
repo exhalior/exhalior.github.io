@@ -1,6 +1,8 @@
+
+
 ## Welcome to my writeup page!
 
-My name is *exhalior* as you can probably tell, i'm an aspiring hacker and have only recently started to go head-on into ctf challenges.
+My name is *[exhalior](https://tryhackme.com/p/exhalior)* as you can probably tell, i'm an aspiring hacker and have only recently started to go head-on into ctf challenges.
 
 Most of my writeups will be on tryhackme.
 
