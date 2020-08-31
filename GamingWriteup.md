@@ -1,7 +1,7 @@
 ---
 permalink: /GamingWriteup.html
 ---
-
+*[Back To Main Page](https://exhalior.github.io)*
 ![thumbnail](https://i.imgur.com/lZRim5g.jpg = 100x100)
 
 ## Tryhackme Gaming Server Writeup.
