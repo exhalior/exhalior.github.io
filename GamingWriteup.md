@@ -2,7 +2,7 @@
 permalink: /GamingWriteup.html
 ---
 
-![thumbnail](https://i.imgur.com/lZRim5g.jpg)
+![thumbnail](https://i.imgur.com/lZRim5g.jpg | 250x250)
 
 ## Tryhackme Gaming Server Writeup.
 
@@ -57,7 +57,7 @@ chmod 600 SecretKey
 
 Under the folder /uploads there were a few files and a wordlist which I assumed would be for bruteforcing something. So I saved it to my machine.
 
-<img src=https://i.imgur.com/BoiE8ui.png alt="uploads">
+![wordlist](https://i.imgur.com/BoiE8ui.png)
 
 Simply ssh'ing into the machine under *John* prompted us with a password for the ssh key. No problem.
 John the ripper should be good enough for this job!.
@@ -74,7 +74,7 @@ john keyhash -w=dict.lst
 
 Boom! Found it!
 
-<img src=https://i.imgur.com/gvMwN2e.png alt="johhny">
+![password](https://i.imgur.com/gvMwN2e.png)
 
 ## Getting User.txt
 
@@ -88,7 +88,7 @@ When prompted for a passphrase, we enter the one found by john the ripper earlie
 
 Now all we have to do is *ls* and we have the user.txt
 
-<img src=https://i.imgur.com/QWbXKr5.png alt="ls">
+![lstouser](https://i.imgur.com/QWbXKr5.png)
 
 ## Privesc to Root.txt
 
@@ -118,7 +118,7 @@ Once linpeas is finished, we need to find anything red, or highlighted. Highligh
 be checked out if none of the highlighted items work.
 Here, we can see that root and lxd are highlighted.
 
-<img src=https://i.imgur.com/ZcRVxi2.png alt="lxd">
+![linpeasr](https://i.imgur.com/ZcRVxi2.png)
 
 Initially I thought it would be as simple as running *sudo su* and gaining root privs, but that just led me down a rabbit hole of scouring the machine for johns
 real credentials.
@@ -156,11 +156,11 @@ Once we run the script, we should achieve the privesc and become root.
 
 Boom! We have achieved root privileges!!
 
-<img src=https://i.imgur.com/blIf2iY.png alt="root">
+![root](https://i.imgur.com/blIf2iY.png)
 
 Once we cd to /mnt/root/root we can *ls* and find our sweet, sweet, root.txt
 
-<img src=https://i.imgur.com/uEVyjAm.png alt="roottx">
+![rootxt](https://i.imgur.com/uEVyjAm.png)
 
 ## Thank you for reading!
 
