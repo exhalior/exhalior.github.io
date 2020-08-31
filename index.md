@@ -8,3 +8,4 @@ Tryhackme has been a great platform for me so far, and i'm keen to learn more. T
 
 ## Writeups:
 
+[GamingServer Writeup *TRYHACKME*](https://exhalior.github.io/GamingWriteup.html)
