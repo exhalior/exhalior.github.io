@@ -2,6 +2,8 @@
 permalink: /GamingWriteup.html
 ---
 
+<img src=https://i.imgur.com/lZRim5g.jpg alt="gaming">
+
 ## Tryhackme Gaming Server Writeup.
 
 This writeup is on the [Tryhackme GamingServer](https://tryhackme.com/room/gamingserver) machine.
@@ -44,7 +46,7 @@ hydra -l john -P *path to wordlist* *machine_ip* ssh
 Running gobuster using the common.txt wordlist from dirb revealed a /secret directory and an /uploads directory.
 The /secret directory seemed out of place, so I checked there first.
 
-!(image)[https://i.imgur.com/FYrdjNd.png]
+<img src=https://i.imgur.com/FYrdjNd.png>
 
 In the /secret index there was a single file named *"SecretKey"* and opening it revealed a private ssh key.
 I copied it to my folder and gave it the right permissions.
