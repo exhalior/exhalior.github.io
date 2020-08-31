@@ -54,7 +54,7 @@ Under the folder /uploads there were a few files and a wordlist which I assumed 
 ![wordlist](https://i.imgur.com/BoiE8ui.png)
 
 Simply ssh'ing into the machine under *John* prompted us with a password for the ssh key. No problem.
-John the ripper should be good enough for this job!.
+John the ripper should be good enough for this job!
 First i used ssh2john to format the key into something john the ripper can read.
 
 ```/usr/share/john/ssh2john.py SecretKey > keyhash```
