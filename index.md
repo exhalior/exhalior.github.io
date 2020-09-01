@@ -1,4 +1,4 @@
-
+![nice](https://tryhackme.com/badge/97433)
 
 ## Welcome to my writeup page!
 
