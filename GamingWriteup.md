@@ -154,5 +154,8 @@ This was a fun machine, thank you to the creator and thank you to YOU! for readi
 Until next time. :)
 Stay sane.
 
+<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101275407);</script>
+<script async src="//static.getclicky.com/js"></script>
+
 
 
