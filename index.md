@@ -1,4 +1,4 @@
-<script src="https://tryhackme.com/badge/97433"></script>
+<script src="https://tryhackme.com/badge/97433"></script> <script src="https://www.hackthebox.eu/badge/120107"></script>
 
 ## Welcome to my writeup page!
 
